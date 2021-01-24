@@ -1,0 +1,122 @@
+db:
+  connection: "connection details"
+  host: localhost
+  port: 1234
+
+# store below in any class - and make that class as bean
+hariom:
+  address: bangalore karnataka
+  pin: 560037
+  collegelist:
+    - bhilai
+    - bangalore
+  collegemap:
+    rsr: btech
+    rvce: mtech
+
+# key as map and value as Object
+#key hariom : value as all details
+username:
+  hariom:
+    address: bangalore karnataka
+    pin: 560037
+    collegelist:
+      - bhilai
+      - bangalore
+    collegemap:
+      rsr: btech
+      rvce: mtech
+  chandan:
+    address: chennai tamilnadu
+    pin: 12345
+    collegelist:
+      - chennai
+      - kota
+    collegemap:
+      vit: btech
+      dav: 12th
+
+map1:
+  key1: value1
+  key2: value2
+
+ymlkey1:
+  #map1 : variable name = application, values = K-V map
+  application:
+    name: InjectMapFromYAML
+    url: http://injectmapfromyaml.dev
+    description: How To Inject a map from a YAML File in Spring Boot
+  #map2
+  config:
+    #list : variable name = ips, values = 10....
+    ips:
+      - 10.10.10.10
+      - 10.10.10.11
+      - 10.10.10.12
+      - 10.10.10.13
+    filesystem:
+      - /dev/root
+      - /dev/md2
+      - /dev/md4
+  #map3
+  users:
+    #Object : un, pass
+    root:
+      username: root
+      password: rootpass
+    guest:
+      username: guest
+      password: guestpass
+  #Key + Object
+  #map4 :
+  all_users_config:
+    #key
+    default:
+      #Object
+      logType:
+        - critical
+        - info
+      logFrequency: 10
+      logDurationInSec: 100
+      logWaitTimeInSec: 100
+    user1:
+      logType:
+        - info
+      logFrequency: 10
+      logDurationInSec: 100
+      logWaitTimeInSec: 100
+
+# create config for single map4 entry -> not possible so create 2 level, A.B.C -> map4.alluser.<actual data>
+#Not working
+map4:
+  default:
+    logType:
+      - critical
+      - info
+    logFrequency: 10
+    logDurationInSec: 100
+    logWaitTimeInSec: 100
+  user1:
+    logType:
+      - info
+    logFrequency: 10
+    logDurationInSec: 100
+    logWaitTimeInSec: 100
+
+map5:
+  allUsers:
+   default:
+     logType:
+       - critical
+       - info
+     logFrequency: 10
+     logDurationInSec: 100
+     logWaitTimeInSec: 100
+   user1:
+     logType:
+       - info
+     logFrequency: 11
+     logDurationInSec: 107
+     logWaitTimeInSec: 105
+
+server.port: 8081
