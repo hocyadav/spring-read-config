@@ -103,13 +103,13 @@ map4:
     logDurationInSec: 100
     logWaitTimeInSec: 100
 
+#working
 map5:
   allUsers:
    default:
      logType:
        - critical
        - info
-     logFrequency: 10
      logDurationInSec: 100
      logWaitTimeInSec: 100
    user1:
